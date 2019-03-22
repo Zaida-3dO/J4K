@@ -19,7 +19,9 @@ export class RegisterAdvocateComponent implements OnInit {
     //Ensure things are well defined!!
   }
 
-  constructor() { }
+  constructor() { 
+    this.advocate = new User();
+  }
 
   ngOnInit() {
   }

@@ -2,11 +2,11 @@
   <div class="container">
       <div class="row justify-content-between">
           <!-- Contact Form -->
-          <div class="col-12 col-lg-8">
+          <div class="col-12 col-lg-12">
               <div class="uza-contact-form mb-80">
-                  <form action="#" method="post">
+                  <form>
                       <div class="row">
-                          <div class="col-lg-6">
+                          <div class="col-lg-12">
                               <div class="form-group">
                                   <input [(ngModel)]="advocate.name" 
                                     type="text" class="form-control mb-30" name="full-name" placeholder="Name">
@@ -14,32 +14,65 @@
                           </div>
                           <div class="col-lg-6">
                               <div class="form-group">
-                                  <input type="email" class="form-control mb-30" name="email" placeholder="Email">
+                                  <input [(ngModel)]="advocate.email" 
+                                  type="email" class="form-control mb-30" name="email" placeholder="Email">
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="form-group">
-                                  <input type="text" class="form-control mb-30" name="full-name" placeholder="Phone">
+                                  <input [(ngModel)]="advocate.phone"
+                                  type="text" class="form-control mb-30" name="phone" placeholder="Phone">
                               </div>
                           </div>
                           <div class="col-lg-12">
                               <div class="form-group">
-                                  <input type="text" class="form-control mb-30" name="address" placeholder="Address">
+                                  <input [(ngModel)]="advocate.address"
+                                  type="text" class="form-control mb-30" name="address" placeholder="Address">
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="form-group">
+                                  <input [(ngModel)]="advocate.state"
+                                  type="text" class="form-control mb-30" name="state" placeholder="State">
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="form-group">
+                                  <input [(ngModel)]="advocate.country"
+                                  type="text" class="form-control mb-30" name="country" placeholder="Country">
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="form-group">
+                                  <input [(ngModel)]="password"
+                                  type="pasword" class="form-control mb-30" name="password" placeholder="Password">
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="form-group">
+                                  <input [(ngModel)]="confirmPassword"
+                                  type="pasword" class="form-control mb-30" name="confirmPassword" placeholder="Confirm Password">
                               </div>
                           </div>
                           <div class="col-12">
                               <div class="form-group">
-                                  <textarea class="form-control mb-30" name="description" rows="8" cols="80" placeholder="About (Tell us more about yourself)"></textarea>
+                                  <textarea [(ngModel)]="advocate.description"
+                                  class="form-control mb-30" name="description" rows="8" cols="80" placeholder="About (Tell us more about yourself)"></textarea>
                               </div>
                           </div>
                           <div class="col-12">
-                              <button class="btn uza-btn btn-3 mt-15">Register</button>
+                              <div class="form-group">
+                                  <textarea [(ngModel)]="advocate.info"
+                                  class="form-control mb-30" name="description" rows="8" cols="80" placeholder="Additional Info (Any other thing you want to let us know?)"></textarea>
+                              </div>
+                          </div>
+                          <div class="col-12">
+                              <button class="btn uza-btn btn-3 mt-15" (click)="onRegister()">Register</button>
                           </div>
                       </div>
                   </form>
               </div>
           </div>
       </div>
-    </div>
   </div>
 </section>
