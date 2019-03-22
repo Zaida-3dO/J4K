@@ -9,6 +9,8 @@ import {User} from '../../models/user';
 export class RegisterAdvocateComponent implements OnInit {
 
   advocate: User;
+  password = '';
+  confirmPassword = '';
 
   onRegister() {
     this.validate();
@@ -16,7 +18,7 @@ export class RegisterAdvocateComponent implements OnInit {
   }
 
   validate() {
-    // Ensure things are well defined!!
+     // Ensure things are well defined!!
   }
 
   constructor() {

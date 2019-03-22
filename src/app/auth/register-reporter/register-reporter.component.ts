@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-register-reporter',
@@ -6,8 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register-reporter.component.css']
 })
 export class RegisterReporterComponent implements OnInit {
+  reporter: User;
+  password = '';
+  confirmPassword = '';
 
-  constructor() { }
+  onRegister() {
+    this.validate();
+    console.log(this.reporter);
+  }
+
+  validate() {
+    // Ensure things are well defined!!
+  }
+
+  constructor() {
+    this.reporter = new User();
+  }
 
   ngOnInit() {
   }
