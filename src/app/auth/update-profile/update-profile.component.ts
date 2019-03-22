@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user';
 import {AppService} from '../../app.service';
 
@@ -20,13 +20,14 @@ export class UpdateProfileComponent implements OnInit {
     // Ensure things are well defined!!
   }
 
-  constructor(appService: AppService) {
-    appService.getUser((user: User) => {
+  constructor(private appService: AppService) {
+    this.appService.getUser((user: User) => {
       this.user = user;
     }, undefined);
   }
 
   ngOnInit() {
+    this.appService.setPath('Update Profile');
   }
 
 }

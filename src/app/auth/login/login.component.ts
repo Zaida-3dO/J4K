@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppService} from '../../app.service';
 import {User} from '../../models/user';
 
 @Component({
@@ -18,11 +19,12 @@ export class LoginComponent implements OnInit {
     // Ensure things are well defined!!
   }
 
-  constructor() {
+  constructor(private appService: AppService) {
     this.user = new User();
   }
 
   ngOnInit() {
+    this.appService.setPath('Login');
   }
 
 }

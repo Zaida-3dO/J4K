@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppService} from '../app.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  path: string;
 
-  ngOnInit() {
+  constructor(private appService: AppService) {
   }
 
+  ngOnInit() {
+    this.appService.path$.subscribe(data => {
+      this.path = data;
+      console.log(this.path);
+    });
+  }
 }
