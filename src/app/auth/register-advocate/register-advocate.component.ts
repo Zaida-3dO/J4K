@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
+import {Component, OnInit} from '@angular/core';
+import {User} from 'src/app/models/user';
 
 @Component({
   selector: 'app-register-advocate',
@@ -10,7 +10,8 @@ export class RegisterAdvocateComponent implements OnInit {
 
   advocate: User;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
