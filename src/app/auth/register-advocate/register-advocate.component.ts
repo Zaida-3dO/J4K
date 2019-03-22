@@ -10,6 +10,15 @@ export class RegisterAdvocateComponent implements OnInit {
 
   advocate: User;
 
+  onRegister(){
+    this.validate();
+    console.log(this.advocate);
+  }
+
+  validate(){
+    //Ensure things are well defined!!
+  }
+
   constructor() { }
 
   ngOnInit() {
