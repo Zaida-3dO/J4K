@@ -27,7 +27,7 @@ export class RegisterAdvocateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appService.setPath('Registration');
+    this.appService.setPath('Advocate Registration');
   }
 
 }

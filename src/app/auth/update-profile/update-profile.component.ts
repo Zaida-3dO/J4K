@@ -12,7 +12,7 @@ export class UpdateProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appService.setPath('Registration');
+    this.appService.setPath('Update Profile');
   }
 
 }

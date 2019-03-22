@@ -26,7 +26,7 @@ export class RegisterReporterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appService.setPath('Registration');
+    this.appService.setPath('Reporter Registration');
   }
 
 }
