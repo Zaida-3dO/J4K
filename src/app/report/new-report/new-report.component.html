@@ -1,3 +1,46 @@
-<p>
-  new-report works!
-</p>
+<section class="uza-contact-area section-padding-80">
+  <div class="container">
+    <div class="row justify-content-between">
+      <!-- Contact Form -->
+      <div class="col-12 col-lg-12">
+        <div class="uza-contact-form mb-80">
+          <form>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <input [(ngModel)]="report.title"
+                         type="text" class="form-control mb-30" name="full-name" placeholder="Title">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input [(ngModel)]="report.tags"
+                         type="email" class="form-control mb-30" name="email" placeholder="Tags">
+                  <div class="col-12">
+                    <button class="btn uza-btn btn-3 mt-15" (click)="addTag()">Add Tag</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input [(ngModel)]="report.persons"
+                         type="text" class="form-control mb-30" name="phone" placeholder="Add Entity">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                                  <textarea [(ngModel)]="report.content"
+                                            class="form-control mb-30" name="description" rows="8" cols="80"
+                                            placeholder="About (Tell us more about yourself)"></textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn uza-btn btn-3 mt-15" (click)="sendReport()">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

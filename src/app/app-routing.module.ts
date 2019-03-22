@@ -10,54 +10,44 @@ import {ReporterMainComponent} from './reporter/reporter-main/reporter-main.comp
 import {LandingPageMainComponent} from './landing-page/landing-page-main/landing-page-main.component';
 import {LoginComponent} from './auth/login/login.component';
 import {UpdateProfileComponent} from './auth/update-profile/update-profile.component';
+import {ReportMainComponent} from './report/report-main/report-main.component';
+import {AdvocateComponent} from './advocate/advocate.component';
+import {AdvocateMainComponent} from './advocate/advocate-main/advocate-main.component';
+import {ReportListComponent} from './report/report-list/report-list.component';
 
 const routes: Routes = [
   {
     path: '', component: LandingPageComponent,
     children: [
-      {
-        path: '',
-        component: LandingPageMainComponent
-      },
-      {
-        path: 'login',
-        component: LoginComponent
-      },
+      {path: '', component: LandingPageMainComponent},
       {
         path: 'register',
         children: [
-          {
-            path: '',
-            component: RegisterComponent
-          },
-          {
-            path: 'advocate',
-            component: RegisterAdvocateComponent
-          },
-          {
-            path: 'reporter',
-            component: RegisterReporterComponent
-          }
+          {path: '', component: RegisterComponent},
+          {path: 'advocate', component: RegisterAdvocateComponent},
+          {path: 'reporter', component: RegisterReporterComponent}
         ]
       },
-      {
-        path: 'update-profile',
-        component: UpdateProfileComponent
-      }
+      {path: 'login', component: LoginComponent},
+      {path: 'updateAccount', component: UpdateProfileComponent}
     ]
   },
   {
-    path: 'reporter',
-    component: ReporterComponent,
+    path: 'reporter', component: ReporterComponent,
     children: [
-      {
-        path: '',
-        component: ReporterMainComponent
-      },
-      {
-        path: 'new/report',
-        component: NewReportComponent
-      }
+      {path: '', component: ReporterMainComponent},
+      {path: ':reportId', component: ReportMainComponent},
+      {path: 'new/report', component: NewReportComponent},
+      {path: 'updateAccount', component: UpdateProfileComponent}
+    ]
+  },
+  {
+    path: 'advocate', component: AdvocateComponent,
+    children: [
+      {path: '', component: AdvocateMainComponent},
+      {path: ':content', component: ReportListComponent},
+      {path: ':reportId', component: ReportMainComponent},
+      {path: 'updateAccount', component: UpdateProfileComponent}
     ]
   }
 ];
