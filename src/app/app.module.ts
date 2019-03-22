@@ -15,6 +15,8 @@ import { ReportMainComponent } from './report/report-main/report-main.component'
 import { NewReportComponent } from './report/new-report/new-report.component';
 import { ReporterMainComponent } from './reporter/reporter-main/reporter-main.component';
 import { AdvocateMainComponent } from './advocate/advocate-main/advocate-main.component';
+import { ReportListDirective } from './report/report-list.directive';
+import { ReportCardDirective } from './report/report-card.directive';
 
 @NgModule({
   // TODO report list directive
@@ -31,7 +33,9 @@ import { AdvocateMainComponent } from './advocate/advocate-main/advocate-main.co
     ReportMainComponent,
     NewReportComponent,
     ReporterMainComponent,
-    AdvocateMainComponent
+    AdvocateMainComponent,
+    ReportListDirective,
+    ReportCardDirective
   ],
   imports: [
     BrowserModule,
