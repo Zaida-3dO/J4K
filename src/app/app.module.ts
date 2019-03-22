@@ -18,6 +18,7 @@ import { AdvocateMainComponent } from './advocate/advocate-main/advocate-main.co
 import { ReportListDirective } from './report/report-list.directive';
 import { ReportCardDirective } from './report/report-card.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LandingPageMainComponent } from './landing-page/landing-page-main/landing-page-main.component';
 
 @NgModule({
   // TODO report list directive
@@ -36,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReporterMainComponent,
     AdvocateMainComponent,
     ReportListDirective,
-    ReportCardDirective
+    ReportCardDirective,
+    LandingPageMainComponent
   ],
   imports: [
     BrowserModule,
