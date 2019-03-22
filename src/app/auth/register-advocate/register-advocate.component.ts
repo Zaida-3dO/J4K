@@ -10,8 +10,6 @@ import {AppService} from '../../app.service';
 export class RegisterAdvocateComponent implements OnInit {
 
   advocate: User;
-  password = '';
-  confirmPassword = '';
 
   onRegister() {
     this.validate();

@@ -1,3 +1,78 @@
-<p>
-  update-profile works!
-</p>
+<section class="uza-contact-area section-padding-80">
+  <div class="container">
+    <div class="row justify-content-between">
+      <!-- Contact Form -->
+      <div class="col-12 col-lg-12">
+        <div class="uza-contact-form mb-80">
+          <form>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <input [(ngModel)]="user.name"
+                         type="text" class="form-control mb-30" name="full-name" placeholder="Name">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input [(ngModel)]="user.email"
+                         type="email" class="form-control mb-30" name="email" placeholder="Email">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input [(ngModel)]="user.phone"
+                         type="text" class="form-control mb-30" name="phone" placeholder="Phone">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <input [(ngModel)]="user.address"
+                         type="text" class="form-control mb-30" name="address" placeholder="Address">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input [(ngModel)]="user.state"
+                         type="text" class="form-control mb-30" name="state" placeholder="State">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input [(ngModel)]="user.country"
+                         type="text" class="form-control mb-30" name="country" placeholder="Country">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input [(ngModel)]="user.password"
+                         type="password" class="form-control mb-30" name="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input [(ngModel)]="user.confirmPassword"
+                         type="password" class="form-control mb-30" name="confirmPassword" placeholder="Confirm Password">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                                  <textarea [(ngModel)]="user.description"
+                                            class="form-control mb-30" name="description" rows="8" cols="80" placeholder="About (Tell us more about yourself)"></textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                                  <textarea [(ngModel)]="user.info"
+                                            class="form-control mb-30" name="description" rows="8" cols="80" placeholder="Additional Info (Any other thing you want to let us know?)"></textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn uza-btn btn-3 mt-15" (click)="onUpdate()">Update</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

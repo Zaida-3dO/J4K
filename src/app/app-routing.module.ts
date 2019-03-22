@@ -37,6 +37,7 @@ const routes: Routes = [
     children: [
       {path: '', component: ReporterMainComponent},
       {path: ':reportId', component: ReportMainComponent},
+      {path: ':content', component: ReportListComponent},
       {path: 'new/report', component: NewReportComponent},
       {path: 'updateAccount', component: UpdateProfileComponent}
     ]

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {User} from '../../models/user';
 import {AppService} from '../../app.service';
 
 @Component({
@@ -8,7 +9,21 @@ import {AppService} from '../../app.service';
 })
 export class UpdateProfileComponent implements OnInit {
 
+  user: User;
+
+  onUpdate() {
+    this.validate();
+    console.log(this.user);
+  }
+
+  validate() {
+    // Ensure things are well defined!!
+  }
+
   constructor(private appService: AppService) {
+    this.appService.getUser((user: User) => {
+      this.user = user;
+    }, undefined);
   }
 
   ngOnInit() {

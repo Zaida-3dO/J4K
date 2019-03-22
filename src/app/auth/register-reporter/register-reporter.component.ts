@@ -9,8 +9,6 @@ import {AppService} from '../../app.service';
 })
 export class RegisterReporterComponent implements OnInit {
   reporter: User;
-  password = '';
-  confirmPassword = '';
 
   onRegister() {
     this.validate();

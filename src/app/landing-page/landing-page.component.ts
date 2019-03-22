@@ -19,5 +19,4 @@ export class LandingPageComponent implements OnInit {
       console.log(this.path);
     });
   }
-
 }
