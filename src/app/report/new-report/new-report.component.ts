@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Report} from '../../models/report';
 
 @Component({
   selector: 'app-new-report',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewReportComponent implements OnInit {
 
-  constructor() { }
+  report: Report;
+
+  constructor() {
+    this.report = new Report();
+  }
+
+  addTag() {
+
+  }
+
+  sendReport() {
+
+  }
 
   ngOnInit() {
   }
