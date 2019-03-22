@@ -17,6 +17,7 @@ import { ReporterMainComponent } from './reporter/reporter-main/reporter-main.co
 import { AdvocateMainComponent } from './advocate/advocate-main/advocate-main.component';
 import { ReportListDirective } from './report/report-list.directive';
 import { ReportCardDirective } from './report/report-card.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   // TODO report list directive
@@ -39,7 +40,9 @@ import { ReportCardDirective } from './report/report-card.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
