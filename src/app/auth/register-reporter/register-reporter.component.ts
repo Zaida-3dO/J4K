@@ -8,8 +8,6 @@ import {User} from '../../models/user';
 })
 export class RegisterReporterComponent implements OnInit {
   reporter: User;
-  password = '';
-  confirmPassword = '';
 
   onRegister() {
     this.validate();

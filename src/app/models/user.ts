@@ -1,11 +1,13 @@
 export class User {
-  id: '';
-  name: '';
-  phoneNumber: '';
-  email: '';
-  address: '';
-  state: '';
-  country: '';
-  description: '';
-  info: '';
+  id = '';
+  name = '';
+  phoneNumber = '';
+  email = '';
+  address = '';
+  state = '';
+  country = '';
+  description = '';
+  info = '';
+  password = '';
+  confirmPassword = '';
 }

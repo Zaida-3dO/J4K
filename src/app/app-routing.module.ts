@@ -8,6 +8,8 @@ import {NewReportComponent} from './report/new-report/new-report.component';
 import {ReporterComponent} from './reporter/reporter.component';
 import {ReporterMainComponent} from './reporter/reporter-main/reporter-main.component';
 import {LandingPageMainComponent} from './landing-page/landing-page-main/landing-page-main.component';
+import {LoginComponent} from './auth/login/login.component';
+import {UpdateProfileComponent} from './auth/update-profile/update-profile.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,10 @@ const routes: Routes = [
       {
         path: '',
         component: LandingPageMainComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
       },
       {
         path: 'register',
@@ -34,6 +40,10 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'update-profile',
+        component: UpdateProfileComponent
+      }
     ]
   },
   {
