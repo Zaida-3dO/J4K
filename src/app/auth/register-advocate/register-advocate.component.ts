@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from 'src/app/models/user';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-register-advocate',
@@ -9,17 +9,19 @@ import {User} from 'src/app/models/user';
 export class RegisterAdvocateComponent implements OnInit {
 
   advocate: User;
+  password = '';
+  confirmPassword = '';
 
-  onRegister(){
+  onRegister() {
     this.validate();
     console.log(this.advocate);
   }
 
-  validate(){
-    //Ensure things are well defined!!
+  validate() {
+     // Ensure things are well defined!!
   }
 
-  constructor() { 
+  constructor() {
     this.advocate = new User();
   }
 
