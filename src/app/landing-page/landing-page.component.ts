@@ -14,7 +14,10 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appService.path$.subscribe(data => this.path = data);
+    this.appService.path$.subscribe(data => {
+      this.path = data;
+      console.log(this.path);
+    });
   }
 
 }

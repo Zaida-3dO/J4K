@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user';
+import {AppService} from '../../app.service';
 
 @Component({
   selector: 'app-register-advocate',
@@ -21,11 +22,12 @@ export class RegisterAdvocateComponent implements OnInit {
      // Ensure things are well defined!!
   }
 
-  constructor() {
+  constructor(private appService: AppService) {
     this.advocate = new User();
   }
 
   ngOnInit() {
+    this.appService.setPath('Registration');
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/user';
+import {AppService} from '../../app.service';
 
 @Component({
   selector: 'app-register-reporter',
@@ -20,11 +21,12 @@ export class RegisterReporterComponent implements OnInit {
     // Ensure things are well defined!!
   }
 
-  constructor() {
+  constructor(private appService: AppService) {
     this.reporter = new User();
   }
 
   ngOnInit() {
+    this.appService.setPath('Registration');
   }
 
 }
