@@ -11,6 +11,7 @@
                 <div class="post-content text-center mb-50">
                   <a href="#" class="post-date"><span>{{report.date.substring(2,-1)}}</span>{{report.date.substring(3)}}</a>
                   <h2>{{report.title}}</h2>
+                  <button class="btn uza-btn btn-3 mt-15" (click)="accept()" *ngIf="report && report.status=='pending'">Accept</button>
                 </div>
               </div>
                 <!--<div class="col-12">-->
