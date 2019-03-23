@@ -13,7 +13,13 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.validate();
     console.log(this.user);
-    this.appService.login(this.user);
+    this.appService.login(this.user.email, this.user.password).subscribe(
+      (data: any) => {
+        alert('Successfull');
+      }, error => {
+        console.log('Error', error);
+        alert('Fail');
+      });
   }
 
   validate() {

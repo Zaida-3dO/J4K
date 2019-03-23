@@ -18,15 +18,9 @@ export class RegisterAdvocateComponent implements OnInit {
       (data: any) => {
         alert('Successfull');
       }, error => {
-        console.log(error);
+        console.log('Error', error);
         alert('Fail');
       });
-    // this.appService.login().subscribe(
-    //   (data: any) => {
-    //     alert('Successfull');
-    //   }, error => {
-    //     alert('Fail');
-    //   });
   }
 
   validate() {
@@ -40,5 +34,4 @@ export class RegisterAdvocateComponent implements OnInit {
   ngOnInit() {
     this.appService.setPath('Advocate Registration');
   }
-
 }

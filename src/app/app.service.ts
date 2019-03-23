@@ -24,9 +24,27 @@ export class AppService {
     return this.http.get(this.API_URL + 'user');
   }
 
-  login(user) {
-    console.log('Me');
-    return this.http.post(this.API_URL + 'login', {A: 'A'});
+  createReport(report) {
+    console.log(report);
+    const payload = new HttpParams()
+      .set('address', report.address)
+      .set('country', report.country)
+      .set('description', report.content)
+      .set('title', report.title)
+      .set('state', report.state)
+      .set('tags', JSON.stringify(report.tags))
+      .set('persons', JSON.stringify(report.persons))
+    return this.http.post(this.API_URL + 'reports/create', payload);
+  }
+
+  login(email, password) {
+    // console.log(user);
+    const payload = new HttpParams()
+      .set('email', email)
+      .set('password', password);
+    return this.http.post(this.API_URL + 'login', payload);
+    // console.log('Me');
+    // return this.http.post(this.API_URL + 'login', {A: 'A'});
   }
 
   getUser(success: (user: User) => void, error: (error: string) => void) {

@@ -10,23 +10,38 @@ import {AppService} from '../../app.service';
 export class NewReportComponent implements OnInit {
 
   report: Report;
+  newTag: string;
 
   constructor(private appService: AppService) {
     this.report = new Report();
-    this.appService.loadUser().subscribe(
+  }
+
+  addTag() {
+    if (this.newTag) {
+      this.report.tags.push((this.newTag));
+      this.newTag = '';
+    }
+  }
+
+  addPoi() {
+    const id = this.report.persons.length;
+    this.report.persons.push({
+      id,
+      name: '',
+      phone: '',
+      email: '',
+      address: '',
+      type: ''
+    });
+  }
+
+  sendReport() {
+    this.appService.createReport(this.report).subscribe(
       (data: any) => {
         alert('Successfull');
       }, error => {
         alert('Fail');
       });
-  }
-
-  addTag() {
-
-  }
-
-  sendReport() {
-
   }
 
   ngOnInit() {
