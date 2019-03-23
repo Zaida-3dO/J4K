@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Report} from '../../models/report';
 import {AppService} from '../../app.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-report',
@@ -12,7 +13,7 @@ export class NewReportComponent implements OnInit {
   report: Report;
   newTag: string;
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService, private router: Router) {
     this.report = new Report();
   }
 
@@ -45,6 +46,9 @@ export class NewReportComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.appService.isLoggedIn()) {
+      this.router.navigate(['/register/login']);
+    }
     this.appService.setPath('Make A Report!');
   }
 

@@ -140,18 +140,12 @@
                   </ol>
                 </div>
                 <!-- Leave A Reply -->
-                <div class="uza-contact-form">
+                <div class="uza-contact-form" *ngIf="appService.isLoggedIn()">
                   <h2 class="mb-4">Update Activities</h2>
 
                   <!-- Form -->
                   <form action="#" method="post">
                     <div class="row">
-                      <div class="col-lg-6">
-                        <input type="text" name="message-name" class="form-control mb-30" placeholder="Name">
-                      </div>
-                      <div class="col-lg-6">
-                        <input type="email" name="message-email" class="form-control mb-30" placeholder="Email">
-                      </div>
                       <div class="col-12">
                         <textarea name="message" class="form-control mb-30" placeholder="Comment"></textarea>
                       </div>

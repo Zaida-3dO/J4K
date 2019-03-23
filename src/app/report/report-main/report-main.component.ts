@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {REPORTS} from '../../mock-reports';
 import {Caption} from '../../models/caption';
-import {Report} from "../../models/report";
+import {AppService} from '../../app.service';
 
 @Component({
   selector: 'app-report-main',
@@ -10,11 +10,11 @@ import {Report} from "../../models/report";
 })
 export class ReportMainComponent implements OnInit {
 
-  report: Report;
+  report: any;
   caption: Caption;
   relateds = [];
 
-  constructor() {
+  constructor(private appService: AppService) {
     this.caption = new Caption();
     this.report = {
       date: '23 March, 2019',

@@ -33,7 +33,7 @@ export class AppService {
       .set('title', report.title)
       .set('state', report.state)
       .set('tags', JSON.stringify(report.tags))
-      .set('persons', JSON.stringify(report.persons))
+      .set('persons', JSON.stringify(report.persons));
     return this.http.post(this.API_URL + 'reports/create', payload);
   }
 
@@ -50,6 +50,10 @@ export class AppService {
   getUser(success: (user: User) => void, error: (error: string) => void) {
     // Todo: Implement getting current user
     success(new User());
+  }
+
+  isLoggedIn() {
+    return true;
   }
 
   registerUser(user, role) {

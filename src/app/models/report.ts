@@ -10,4 +10,5 @@ export class Report {
   state = '';
   country = '';
   id = '';
+  date = '';
 }
