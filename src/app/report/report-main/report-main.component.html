@@ -24,7 +24,7 @@
                     <i class="icon_quotations" aria-hidden="true"></i>
                   </div>
                   <div class="text">
-                    <h5>{{caption.getCaption(report, 20)}}</h5>
+                    <h5>Moment led family sooner cannot her window pulled any</h5>
                     <h6>–anonymous</h6>
                   </div>
                 </blockquote>
@@ -61,9 +61,9 @@
                       <div class="single-blog-post bg-img mb-50" style="background-image: url('../../../assets/uza/img/bg-img/8.jpg');">
                         <!-- Post Content -->
                         <div class="post-content">
-                          <span class="post-date"><span>{{report.relateds[0].date.substring(2,-1)}}</span>{{report.relateds[0].date.substring(3)}}</span>
+                          <span class="post-date"><span>{{report.relateds[0].date.substring(2,-1)}}</span> {{report.relateds[0].date.substring(3)}}</span>
                           <a href="#" class="post-title">{{report.relateds[0].title}}</a>
-                          <p>{{caption.getCaption(report.relateds[0], 20)}}</p>
+                          <p>{{report.relateds[0].caption}}</p>
                           <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
                         </div>
                       </div>
@@ -74,9 +74,9 @@
                       <div class="single-blog-post bg-img mb-50" style="background-image: url(../../../assets/uza/img/bg-img/8.jpg);">
                         <!-- Post Content -->
                         <div class="post-content">
-                          <span class="post-date"><span>{{report.relateds[1].date.substring(2,-1)}}</span>{{report.relateds[1].date.substring(3)}}</span>
+                          <span class="post-date"><span>{{report.relateds[1].date.substring(2,-1)}}</span>{{report.relateds[1].date.substring(2)}}</span>
                           <a href="#" class="post-title">{{report.relateds[1].title}}</a>
-                          <p>{{caption.getCaption(report.relateds[1], 20)}}</p>
+                          <p>{{report.relateds[1].caption}}</p>
                           <a href="javascript:void(0)" routerLink="./report" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
                         </div>
                       </div>
@@ -140,18 +140,12 @@
                   </ol>
                 </div>
                 <!-- Leave A Reply -->
-                <div class="uza-contact-form">
+                <div class="uza-contact-form" *ngIf="appService.isLoggedIn()">
                   <h2 class="mb-4">Update Activities</h2>
 
                   <!-- Form -->
                   <form action="#" method="post">
                     <div class="row">
-                      <div class="col-lg-6">
-                        <input type="text" name="message-name" class="form-control mb-30" placeholder="Name">
-                      </div>
-                      <div class="col-lg-6">
-                        <input type="email" name="message-email" class="form-control mb-30" placeholder="Email">
-                      </div>
                       <div class="col-12">
                         <textarea name="message" class="form-control mb-30" placeholder="Comment"></textarea>
                       </div>

@@ -1,3 +1,14 @@
+<div class="container h-100">
+  <div class="row h-100 align-items-end">
+    <div class="col-12">
+      <div class="breadcumb--con">
+        <h1 class="title">Reports</h1>
+        <nav aria-label="breadcrumb">
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="uza-blog-area section-padding-80">
   <div class="container">
     <div class="row">
@@ -7,12 +18,12 @@
           <!-- Post Content -->
           <div class="post-content">
             <span style="display: inline" class="post-date"><span>23</span> August, 2018</span>
-            <a href="#" class="ml-15 ongoing-badge" *ngIf="report.status==1">On going</a>
-            <a href="#" class="ml-15 pending-badge" *ngIf="report.status==0">Pending</a>
-            <a href="#" class="ml-15 closed-badge" *ngIf="report.status==2">Closed</a>
-            <a href="#" class="post-title">{{report.title}}</a>
+            <a class="ml-15 ongoing-badge" *ngIf="report.status==1">On going</a>
+            <a class="ml-15 pending-badge" *ngIf="report.status==0">Pending</a>
+            <a class="ml-15 closed-badge" *ngIf="report.status==2">Closed</a>
+            <a class="post-title">{{report.title}}</a>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
-            <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+            <a href="javascript:void(0)" routerLink="/reporter/report/{{report.id}}}" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
           </div>
         </div>
       </div>

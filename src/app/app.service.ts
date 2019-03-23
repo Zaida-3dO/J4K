@@ -70,6 +70,10 @@ export class AppService {
     success(new User());
   }
 
+  isLoggedIn() {
+    return true;
+  }
+
   registerUser(user, role) {
     console.log(user);
     const payload = new HttpParams()
