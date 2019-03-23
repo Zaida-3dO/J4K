@@ -9,4 +9,5 @@ export class Report {
   address = '';
   state = '';
   country = '';
+  id = '';
 }
