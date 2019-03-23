@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Report} from '../../models/report';
+import {REPORTS} from '../../mock-reports';
 import {Caption} from '../../models/caption';
+import {Report} from "../../models/report";
 
 @Component({
   selector: 'app-report-main',
@@ -9,7 +10,7 @@ import {Caption} from '../../models/caption';
 })
 export class ReportMainComponent implements OnInit {
 
-  report: any;
+  report: Report;
   caption: Caption;
   relateds = [];
 
@@ -29,12 +30,16 @@ export class ReportMainComponent implements OnInit {
         'yet her sir extensive defective unwilling get. Why resolution one motionless you him thoroughly. Noise is round to in' +
         ' it quick timed doors. Written address greatly get attacks inhabit pursuit our but. Lasted hunted enough an u' +
         'p seeing in lively letter. Had judgment out opinions property the supplied.',
-      tags: ['Abduction', 'Abuse', 'Rape']
+      tags: ['Abduction', 'Abuse', 'Rape'],
+      persons: [],
+      caption: 'It sportsman earnestly ye preserved an on. ',
+      status: 1
     };
-    this.relateds = this.getRelatedReports(this.report);
+    this.relateds = [REPORTS[1], REPORTS[8]];
+    console.log(this.relateds);
   }
   getRelatedReports(reports) {
-      return [];
+      return [REPORTS[1], REPORTS[8]];
   }
 
 

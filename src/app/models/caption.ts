@@ -6,7 +6,7 @@ export class Caption {
     return '';
   }
 
-  getCaption(report: Report, threshold) {
+   getCaption(report: Report, threshold) {
       report.caption = Caption.extract(report.content, threshold);
       return report.caption;
   }
