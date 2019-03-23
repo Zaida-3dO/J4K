@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Report} from '../../models/report';
+import {AppService} from '../../app.service';
 
 @Component({
   selector: 'app-new-report',
@@ -10,7 +11,7 @@ export class NewReportComponent implements OnInit {
 
   report: Report;
 
-  constructor() {
+  constructor(private appService: AppService) {
     this.report = new Report();
   }
 
@@ -23,6 +24,7 @@ export class NewReportComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appService.setPath('Make A Report!');
   }
 
 }
