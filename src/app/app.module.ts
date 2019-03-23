@@ -19,6 +19,7 @@ import {ReportCardDirective} from './report/report-card.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LandingPageMainComponent} from './landing-page/landing-page-main/landing-page-main.component';
 import {ReportListComponent} from './report/report-list/report-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {ReportListComponent} from './report/report-list/report-list.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],

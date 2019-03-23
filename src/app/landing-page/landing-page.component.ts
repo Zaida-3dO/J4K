@@ -14,6 +14,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('Smallz');
     this.appService.path$.subscribe(data => {
       this.path = data;
       console.log(this.path);

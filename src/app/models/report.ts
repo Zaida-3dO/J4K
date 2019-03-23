@@ -3,4 +3,5 @@ export class Report {
   persons = [];
   tags = [];
   content = '';
+  logs = [];
 }

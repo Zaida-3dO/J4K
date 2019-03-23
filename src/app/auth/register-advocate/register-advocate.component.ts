@@ -14,10 +14,23 @@ export class RegisterAdvocateComponent implements OnInit {
   onRegister() {
     this.validate();
     console.log(this.advocate);
+    this.appService.registerUser(this.advocate, 'reporter').subscribe(
+      (data: any) => {
+        alert('Successfull');
+      }, error => {
+        console.log(error);
+        alert('Fail');
+      });
+    // this.appService.login().subscribe(
+    //   (data: any) => {
+    //     alert('Successfull');
+    //   }, error => {
+    //     alert('Fail');
+    //   });
   }
 
   validate() {
-     // Ensure things are well defined!!
+    // Ensure things are well defined!!
   }
 
   constructor(private appService: AppService) {

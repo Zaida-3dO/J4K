@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.validate();
     console.log(this.user);
+    this.appService.login(this.user);
   }
 
   validate() {
