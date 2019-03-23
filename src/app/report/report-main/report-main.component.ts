@@ -17,7 +17,7 @@ export class ReportMainComponent implements OnInit {
     this.caption = new Caption();
     this.report = {
       date: '23 March, 2019',
-      title: 'Addressing the series of abduction at the Central Park.',
+      title: '12 year old sentenced live Imprisonment.',
       content: 'Projecting surrounded literature yet delightful alteration but bed men. Open are from long why cold. I' +
         'f must snug by upon sang loud left. ' +
         'As me do preference entreaties compliment motionless ye literature. Day behaviour explained law remainder.' +
