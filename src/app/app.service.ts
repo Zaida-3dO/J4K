@@ -13,6 +13,9 @@ export class AppService {
   path: Subject<string> = new BehaviorSubject(null);
   path$ = this.path.asObservable();
 
+  token: string;
+  user: any;
+
   constructor(private  http: HttpClient) {
   }
 
@@ -33,7 +36,7 @@ export class AppService {
       .set('title', report.title)
       .set('state', report.state)
       .set('tags', JSON.stringify(report.tags))
-      .set('persons', JSON.stringify(report.persons))
+      .set('persons', JSON.stringify(report.persons));
     return this.http.post(this.API_URL + 'reports/create', payload);
   }
 
@@ -45,6 +48,21 @@ export class AppService {
     return this.http.post(this.API_URL + 'login', payload);
     // console.log('Me');
     // return this.http.post(this.API_URL + 'login', {A: 'A'});
+  }
+
+  setToken(token) {
+    this.token = token;
+    this.setUser();
+  }
+
+  setUser() {
+    this.http.get(this.API_URL + 'user' + '?token=' + this.token).subscribe(
+      (data2: any) => {
+        console.log('USER', data2);
+        this.user = data2.user;
+      }, error2 => {
+        console.log('Error', error2);
+      });
   }
 
   getUser(success: (user: User) => void, error: (error: string) => void) {
