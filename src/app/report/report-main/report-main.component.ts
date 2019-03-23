@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {REPORTS} from '../../mock-reports';
 import {Caption} from '../../models/caption';
 import {AppService} from '../../app.service';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-report-main',
@@ -13,6 +14,7 @@ export class ReportMainComponent implements OnInit {
   report: any;
   caption: Caption;
   relateds = [];
+  user: User;
 
   constructor(private appService: AppService) {
     this.caption = new Caption();
@@ -33,13 +35,18 @@ export class ReportMainComponent implements OnInit {
       tags: ['Abduction', 'Abuse', 'Rape'],
       persons: [],
       caption: 'It sportsman earnestly ye preserved an on. ',
-      status: 1
+      status: 'closed'
     };
     this.relateds = [REPORTS[1], REPORTS[8]];
     console.log(this.relateds);
   }
+
+  accept() {
+    this.appService.accept(this.report);
+  }
+
   getRelatedReports(reports) {
-      return [REPORTS[1], REPORTS[8]];
+    return [REPORTS[1], REPORTS[8]];
   }
 
 
