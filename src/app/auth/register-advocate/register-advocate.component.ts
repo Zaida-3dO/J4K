@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user';
 import {AppService} from '../../app.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register-advocate',
@@ -14,12 +15,17 @@ export class RegisterAdvocateComponent implements OnInit {
   onRegister() {
     this.validate();
     console.log(this.advocate);
-    this.appService.registerUser(this.advocate, 'reporter').subscribe(
+    this.appService.registerUser(this.advocate, 'advocate').subscribe(
       (data: any) => {
-        alert('Successfull');
+        this.appService.login(this.advocate.email, this.advocate.password).subscribe(
+          (data2: any) => {
+            this.appService.setToken(data2.token);
+            this.router.navigate(['advocate']);
+          }, error => {
+            console.log('Error', error);
+          });
       }, error => {
         console.log('Error', error);
-        alert('Fail');
       });
   }
 
@@ -27,7 +33,7 @@ export class RegisterAdvocateComponent implements OnInit {
     // Ensure things are well defined!!
   }
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService, private router: Router) {
     this.advocate = new User();
   }
 

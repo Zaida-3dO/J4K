@@ -3,6 +3,7 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import {User} from './models/user';
 import {environment} from '../environments/environment';
 import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,10 @@ export class AppService {
   path: Subject<string> = new BehaviorSubject(null);
   path$ = this.path.asObservable();
 
-  constructor(private  http: HttpClient) {
+  token: string;
+  user: any;
+
+  constructor(private  http: HttpClient, private router: Router) {
   }
 
   setPath(path: string) {
@@ -47,13 +51,33 @@ export class AppService {
     // return this.http.post(this.API_URL + 'login', {A: 'A'});
   }
 
+  setToken(token) {
+    this.token = token;
+    this.setUser();
+  }
+
+  setUser() {
+    this.http.get(this.API_URL + 'user' + '?token=' + this.token).subscribe(
+      (data2: any) => {
+        console.log('USER', data2);
+        this.user = data2.user;
+        this.router.navigate([this.user.role[0]]);
+      }, error2 => {
+        console.log('Error', error2);
+      });
+  }
+
   getUser(success: (user: User) => void, error: (error: string) => void) {
     // Todo: Implement getting current user
     success(new User());
   }
 
   isLoggedIn() {
-    return true;
+    return !!this.user;
+  }
+
+  getAllReports() {
+    return this.http.get(this.API_URL + 'reports' + '?token=' + this.token);
   }
 
   registerUser(user, role) {

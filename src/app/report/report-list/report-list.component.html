@@ -18,20 +18,21 @@
           <!-- Post Content -->
           <div class="post-content">
             <span style="display: inline" class="post-date"><span>23</span> August, 2018</span>
-            <a class="ml-15 ongoing-badge" *ngIf="report.status==1">On going</a>
-            <a class="ml-15 pending-badge" *ngIf="report.status==0">Pending</a>
-            <a class="ml-15 closed-badge" *ngIf="report.status==2">Closed</a>
+            <a class="ml-15 ongoing-badge" *ngIf="report.status=='on-going'">On going</a>
+            <a class="ml-15 pending-badge" *ngIf="report.status=='pending'">Pending</a>
+            <a class="ml-15 closed-badge" *ngIf="report.status=='closed'">Closed</a>
             <a class="post-title">{{report.title}}</a>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
+            <p>{{report.content}}</p>
             <a href="javascript:void(0)" routerLink="/reporter/report/{{report.id}}}" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
           </div>
         </div>
       </div>
 
-    <div class="row">
-      <div class="col-12 text-center">
-        <a href="#" class="btn uza-btn btn-3">Load More</a>
-      </div>
-    </div></div>
+    <!--<div class="row">-->
+      <!--<div class="col-12 text-center">-->
+        <!--<a href="#" class="btn uza-btn btn-3">Load More</a>-->
+      <!--</div>-->
+    <!--</div>-->
+    </div>
   </div>
 </div>

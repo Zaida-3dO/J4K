@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
     console.log(this.user);
     this.appService.login(this.user.email, this.user.password).subscribe(
       (data: any) => {
-        alert('Successfull');
+        this.appService.setToken(data.token);
+        // this.router.navigate(['reporter']);
       }, error => {
         console.log('Error', error);
         alert('Fail');
