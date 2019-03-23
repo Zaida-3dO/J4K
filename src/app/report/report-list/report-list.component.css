@@ -1,0 +1,32 @@
+.pending-badge{
+  display: inline-block;
+  padding: 5px 15px 3px;
+  font-size: 12px;
+  font-weight: 600;
+  border-color: #e9b500;
+  background-color: #e9b500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.closed-badge{
+  display: inline-block;
+  padding: 5px 15px 3px;
+  font-size: 12px;
+  font-weight: 600;
+  border-color: #e90002;
+  background-color: #e90002;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.ongoing-badge{
+  display: inline-block;
+  padding: 5px 15px 3px;
+  font-size: 12px;
+  font-weight: 600;
+  border-color: #2e7610;
+  background-color: #2e7610;
+  color: #ffffff;
+  text-transform: uppercase;
+}

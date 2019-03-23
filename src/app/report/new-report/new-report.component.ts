@@ -30,6 +30,7 @@ export class NewReportComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appService.setPath('Make A Report!');
   }
 
 }
