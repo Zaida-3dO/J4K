@@ -4,5 +4,6 @@ export class Report {
   persons = [];
   tags = [];
   content = '';
+  status = 0;
   caption = '';
 }
