@@ -14,12 +14,12 @@ export const REPORTS: any[] = [
     caption: CONTENT},
   { title: 'Child forced to marry and dropout of school', content: CONTENT, persons: [], tags: [], status: 1, date: '29 January, 2019',
     caption: CONTENT},
-  { title: 'Child cheated of legal inheritance', content: CONTENT, persons: [], tags: [], status: 2, date: '28 January, 2019',
+  { title: 'Child cheated of legal inheritance', content: CONTENT, persons: [], tags: [], status: 1, date: '28 January, 2019',
     caption: CONTENT },
   { title: 'Child Forced Labour!!', content: CONTENT, persons: [], tags: [], status: 2, date: '12 January, 2019',
     caption: CONTENT},
-  { title: 'Child arrested for stealing food to eat', content: CONTENT, persons: [], tags: [], status: 1, date: '24 December, 2018',
+  { title: 'Child arrested for stealing food to eat', content: CONTENT, persons: [], tags: [], status: 0, date: '24 December, 2018',
     caption: CONTENT},
-  { title: 'Child sentenced to Life imprisonment!', content: CONTENT, persons: [], tags: [], status: 2, date: '13 December, 2018',
+  { title: 'Child sentenced to Life imprisonment!', content: CONTENT, persons: [], tags: [], status: 1, date: '13 December, 2018',
     caption: CONTENT}
 ];
