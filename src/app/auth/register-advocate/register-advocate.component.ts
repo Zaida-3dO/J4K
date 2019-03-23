@@ -14,10 +14,17 @@ export class RegisterAdvocateComponent implements OnInit {
   onRegister() {
     this.validate();
     console.log(this.advocate);
+    this.appService.registerUser(this.advocate, 'reporter').subscribe(
+      (data: any) => {
+        alert('Successfull');
+      }, error => {
+        console.log('Error', error);
+        alert('Fail');
+      });
   }
 
   validate() {
-     // Ensure things are well defined!!
+    // Ensure things are well defined!!
   }
 
   constructor(private appService: AppService) {
@@ -27,5 +34,4 @@ export class RegisterAdvocateComponent implements OnInit {
   ngOnInit() {
     this.appService.setPath('Advocate Registration');
   }
-
 }

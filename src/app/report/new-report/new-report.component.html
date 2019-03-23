@@ -13,35 +13,119 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="form-group">
+                  <label>Title</label>
                   <input [(ngModel)]="report.title"
-                         type="text" class="form-control mb-30" name="full-name" placeholder="Title">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input [(ngModel)]="report.tags"
-                         type="email" class="form-control mb-30" name="email" placeholder="Tags">
-                  <div class="col-12">
-                    <button class="btn uza-btn btn-3 mt-15" (click)="addTag()">Add Tag</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input [(ngModel)]="report.persons"
-                         type="text" class="form-control mb-30" name="phone" placeholder="Add Entity">
+                         type="text" class="form-control mb-30" name="full-name"
+                         placeholder="Give a short title of the incident">
                 </div>
               </div>
               <div class="col-12">
+                <label>Content</label>
                 <div class="form-group">
                                   <textarea [(ngModel)]="report.content"
                                             class="form-control mb-30" name="description" rows="10" cols="80"
-                                            placeholder="Report Content ..."></textarea>
+                                            placeholder="A detailed explanation of the incident, upload photos and videos if available"
+                                            style="min-height: 500px;"></textarea>
                 </div>
               </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label>New Tag</label>
+                  <input [(ngModel)]="newTag"
+                         type="email" class="form-control mb-30" name="email"
+                         placeholder="Tag. e.g. Communication, Domestic violence...">
+
+                </div>
+              </div>
+              <div class="col-2">
+                <button class="btn uza-btn btn-3 mt-15" style="min-width: unset; margin-top:29px;" (click)="addTag()">
+                  +
+                </button>
+              </div>
+              <div class="col-6">
+                <div class="post-catagories" style="margin-top: 0">
+                  <label *ngIf="report.tags.length>0">Tags</label>
+                  <ul class="d-flex flex-wrap align-items-center">
+                    <li *ngFor="let tag of report.tags">
+                      <a href="javascript:void(0)">{{tag}}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input [(ngModel)]="report.address"
+                         type="text" class="form-control mb-30" name="Address"
+                         placeholder="The Site of the incident">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>State</label>
+                  <input [(ngModel)]="report.state"
+                         type="text" class="form-control mb-30" name="State"
+                         placeholder="State">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>Country</label>
+                  <input [(ngModel)]="report.country"
+                         type="text" class="form-control mb-30" name="Country"
+                         placeholder="Country">
+                </div>
+              </div>
+
+
+              <div class="col-lg-12" style="padding:20px; margin:10px;">
+                <div *ngFor="let poi of report.persons">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label>Name</label>
+                      <input [(ngModel)]="poi.name"
+                             type="text" class="form-control mb-30" name="{{poi.id+'Name'}}"
+                             placeholder="The persons name">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Phone</label>
+                      <input [(ngModel)]="poi.phone"
+                             type="text" class="form-control mb-30" name="{{poi.id+'Phone'}}"
+                             placeholder="The phone number of the individual">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>email</label>
+                      <input [(ngModel)]="poi.email"
+                             type="text" class="form-control mb-30" name="{{poi.id+'email'}}"
+                             placeholder="Email Address of the individual">
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label>Address</label>
+                      <input [(ngModel)]="poi.address"
+                             type="text" class="form-control mb-30" name="{{poi.id+'Address'}}"
+                             placeholder="Where to find this individual">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12">
+                    <label>Kind</label>
+                    <input [(ngModel)]="poi.type"
+                           type="text" class="form-control mb-30" name="{{poi.id+'Kind'}}"
+                           placeholder="e.g Victime, Next of Kin, Reporter">
+                  </div>
+                </div>
+              </div>
+              <a href="javascript:void(0)" style="margin: 15px" (click)="addPoi()"><u><i>Add Person of Interest</i></u></a>
               <div class="col-12">
                 <button class="btn uza-btn btn-3 mt-15" (click)="sendReport()">Submit</button>
               </div>
+              <span>Please note, that your details won't be shared on the report. If you wish to be contacted, add your details as a person of interest.</span>
             </div>
           </form>
         </div>

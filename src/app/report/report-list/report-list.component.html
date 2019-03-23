@@ -17,13 +17,13 @@
         <div class="single-blog-post bg-img mb-80" >
           <!-- Post Content -->
           <div class="post-content">
-            <span style="display: inline" class="post-date"><span>{{report.date.substring(2,-1)}}</span> {{report.date.substring(3)}}</span>
-            <a href="#" class="ml-15 ongoing-badge" *ngIf="report.status==1">On going</a>
-            <a href="#" class="ml-15 pending-badge" *ngIf="report.status==0">Pending</a>
-            <a href="#" class="ml-15 closed-badge" *ngIf="report.status==2">Closed</a>
-            <a href="#" class="post-title">{{report.title}}</a>
-            <p>{{report.caption}}</p>
-            <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+            <span style="display: inline" class="post-date"><span>23</span> August, 2018</span>
+            <a class="ml-15 ongoing-badge" *ngIf="report.status==1">On going</a>
+            <a class="ml-15 pending-badge" *ngIf="report.status==0">Pending</a>
+            <a class="ml-15 closed-badge" *ngIf="report.status==2">Closed</a>
+            <a class="post-title">{{report.title}}</a>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
+            <a href="javascript:void(0)" routerLink="/reporter/{{report.id}}}" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
           </div>
         </div>
       </div>
