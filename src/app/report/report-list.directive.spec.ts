@@ -1,8 +1,8 @@
-import { ReportListDirective } from './report-list.directive';
+import { ReportCardDirective } from './report-card.directive';
 
-describe('ReportListDirective', () => {
+describe('ReportCardDirective', () => {
   it('should create an instance', () => {
-    const directive = new ReportListDirective();
+    const directive = new ReportCardDirective();
     expect(directive).toBeTruthy();
   });
 });

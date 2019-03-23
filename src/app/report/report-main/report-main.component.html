@@ -1,3 +1,171 @@
-<p>
-  report-main works!
-</p>
+<section class="blog-details-area section-padding-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blog-details-content">
+          <!-- Post Details Text -->
+          <div class="post-details-text">
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10">
+                <div class="post-content text-center mb-50">
+                  <a href="#" class="post-date"><span>{{report.date.substring(2,-1)}}</span>{{report.date.substring(3)}}</a>
+                  <h2>{{report.title}}</h2>
+                </div>
+              </div>
+                <!--<div class="col-12">-->
+                  <!--<img class="mb-50" src="../../../assets/uza/img/bg-img/14.jpg" alt="">-->
+                <!--</div>-->
+              <div class="col-12 col-lg-10">
+                <p>{{report.content}}</p>
+                <!-- Blockquote -->
+                <blockquote class="uza-blockquote d-flex">
+                  <div class="icon">
+                    <i class="icon_quotations" aria-hidden="true"></i>
+                  </div>
+                  <div class="text">
+                    <h5>{{caption.getCaption(report, 20)}}</h5>
+                    <h6>–anonymous</h6>
+                  </div>
+                </blockquote>
+                <!-- Post Catagories & Post Share -->
+                <div class="d-flex align-items-center justify-content-between">
+                  <!-- Post Catagories -->
+                  <div class="post-catagories">
+                    <ul class="d-flex flex-wrap align-items-center">
+                      <li *ngFor="let tag of report.tags">
+                        <a href="javascript:void(0)">{{tag}}</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Post Share -->
+                  <div class="uza-post-share d-flex align-items-center">
+                    <h6 class="mb-0 mr-3">Share:</h6>
+                    <div class="social-info-">
+                      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Related News Area -->
+                <div class="related-news-area">
+                  <h2 class="mb-4">Related Reports</h2>
+
+                  <div class="row">
+                    <!-- Single Blog Post -->
+                    <div class="col-12 col-lg-6">
+                      <div class="single-blog-post bg-img mb-50" style="background-image: url('../../../assets/uza/img/bg-img/8.jpg');">
+                        <!-- Post Content -->
+                        <div class="post-content">
+                          <span class="post-date"><span>{{report.relateds[0].date.substring(2,-1)}}</span>{{report.relateds[0].date.substring(3)}}</span>
+                          <a href="#" class="post-title">{{report.relateds[0].title}}</a>
+                          <p>{{caption.getCaption(report.relateds[0], 20)}}</p>
+                          <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Single Blog Post -->
+                    <div class="col-12 col-lg-6">
+                      <div class="single-blog-post bg-img mb-50" style="background-image: url(../../../assets/uza/img/bg-img/8.jpg);">
+                        <!-- Post Content -->
+                        <div class="post-content">
+                          <span class="post-date"><span>{{report.relateds[1].date.substring(2,-1)}}</span>{{report.relateds[1].date.substring(3)}}</span>
+                          <a href="#" class="post-title">{{report.relateds[1].title}}</a>
+                          <p>{{caption.getCaption(report.relateds[1], 20)}}</p>
+                          <a href="javascript:void(0)" routerLink="./report" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comments Area -->
+                <div class="comment_area mb-50 clearfix">
+                  <h5 class="title">Activities</h5>
+
+                  <ol>
+                    <!-- Single Comment Area -->
+                    <li class="single_comment_area">
+                      <!-- Comment Content -->
+                      <div class="comment-content d-flex">
+                        <!-- Comment Author -->
+                        <div class="comment-author">
+                          <img src="../../../assets/uza/img/bg-img/15.jpg" alt="author">
+                        </div>
+                        <!-- Comment Meta -->
+                        <div class="comment-meta">
+                          <a href="#" class="post-date">27 Aug 2018</a>
+                          <h5>Jerome Leonard</h5>
+                          <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetu adipisci velit, sed quia non numquam eius modi</p>
+                        </div>
+                      </div>
+
+                        <li class="single_comment_area">
+                          <!-- Comment Content -->
+                          <div class="comment-content d-flex">
+                            <!-- Comment Author -->
+                            <div class="comment-author">
+                              <img src="../../../assets/uza/img/bg-img/16.jpg" alt="author">
+                            </div>
+                            <!-- Comment Meta -->
+                            <div class="comment-meta">
+                              <a href="#" class="post-date">27 Aug 2018</a>
+                              <h5>Theodore Adkins</h5>
+                              <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetu adipisci velit, sed quia non numquam eius modi</p>
+                            </div>
+                          </div>
+                        </li>
+
+                    <!-- Single Comment Area -->
+                    <li class="single_comment_area">
+                      <!-- Comment Content -->
+                      <div class="comment-content d-flex">
+                        <!-- Comment Author -->
+                        <div class="comment-author">
+                          <img src="../../../assets/uza/img/bg-img/17.jpg" alt="author">
+                        </div>
+                        <!-- Comment Meta -->
+                        <div class="comment-meta">
+                          <a href="#" class="post-date">27 Aug 2018</a>
+                          <h5>Roger Marshall</h5>
+                          <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetu adipisci velit, sed quia non numquam eius modi</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+                <!-- Leave A Reply -->
+                <div class="uza-contact-form">
+                  <h2 class="mb-4">Leave A Comment</h2>
+
+                  <!-- Form -->
+                  <form action="#" method="post">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <input type="text" name="message-name" class="form-control mb-30" placeholder="Name">
+                      </div>
+                      <div class="col-lg-6">
+                        <input type="email" name="message-email" class="form-control mb-30" placeholder="Email">
+                      </div>
+                      <div class="col-12">
+                        <textarea name="message" class="form-control mb-30" placeholder="Comment"></textarea>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn uza-btn btn-3 mt-15">Post Comment</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
