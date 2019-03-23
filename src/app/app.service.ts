@@ -3,6 +3,7 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import {User} from './models/user';
 import {environment} from '../environments/environment';
 import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class AppService {
   token: string;
   user: any;
 
-  constructor(private  http: HttpClient) {
+  constructor(private  http: HttpClient, private router: Router) {
   }
 
   setPath(path: string) {
@@ -60,6 +61,7 @@ export class AppService {
       (data2: any) => {
         console.log('USER', data2);
         this.user = data2.user;
+        this.router.navigate([this.user.role[0]]);
       }, error2 => {
         console.log('Error', error2);
       });
@@ -71,7 +73,11 @@ export class AppService {
   }
 
   isLoggedIn() {
-    return true;
+    return !!this.user;
+  }
+
+  getAllReports() {
+    return this.http.get(this.API_URL + 'reports' + '?token=' + this.token);
   }
 
   registerUser(user, role) {
