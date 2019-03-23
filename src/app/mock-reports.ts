@@ -3,8 +3,8 @@ import {Caption} from './models/caption';
 
 const CONTENT = 'Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut';
 
-export const REPORTS: Report[] = [
-  { title: 'Death Squad killing of street children', content: CONTENT, persons: [], tags: [], status: 0, date: '22 March, 2019',
+export const REPORTS: any[] = [
+  { id: '1234', title: 'Death Squad killing of street children', content: CONTENT, persons: [], tags: [], status: 0, date: '22 March, 2019',
     caption: CONTENT},
   { title: 'Child arrested for exam malpractice', content: CONTENT, persons: [], tags: [], status: 1, date: '19 March, 2019',
     caption: CONTENT},
